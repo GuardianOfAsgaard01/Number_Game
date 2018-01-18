@@ -17,7 +17,6 @@ int main(void)
       printf("Invalid input!\n");
       choice = tolower(getchar());
     }
-
     switch(choice)
     {
       case 'p' : play(); break;
