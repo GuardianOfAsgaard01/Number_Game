@@ -47,16 +47,16 @@ static void magic_num(int n)
     exit(0);
   }
   /* no matter what user input we keep magic numbers[4k+1] within the rules */
-  printf("I say %d.\n", (k-1)*4+1);
+  printf("-I say %d.\n", (k-1)*4+1);
   magic_num((k-1)*4+1);
 }
 
 /* first_move: take magic number */
 static void first_move(int n)
 {
-  printf("I start..\n");
+  printf("-I start..\n");
   int temp = (n-1)%4;
-  printf("I say %d.\n", n-temp);
+  printf("-I say %d.\n", n-temp);
   magic_num(n-temp);
 }
 
@@ -64,7 +64,7 @@ static void first_move(int n)
 void play(void)
 {
   int n;
-  printf("Enter the initial number:\n");
+  printf("#Enter the initial number:\n");
   n = get_num(n);
   while(n < 0){
     printf("You cannot enter negative number!\n");
@@ -76,7 +76,7 @@ void play(void)
     first_move(n);
   /* being second for don't lose the magic number */
   else {
-    printf("You start..\n");
+    printf("-You start..\n");
     magic_num(n);
   }
 }
