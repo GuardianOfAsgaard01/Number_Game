@@ -1,3 +1,4 @@
+/* Compile with: gcc -o NumberGame main.c functions.c */
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -10,12 +11,11 @@ int main(void)
   printf("Enter 'h' for getting help.\n");
   printf("Enter 'e' for exit.\n");
   while(1) {
-    //scanf("%c", &choice);
-    choice = getchar();
-    choice = tolower(choice);
+    choice = tolower(getchar());
+    /* Checking if input is valid */
     while(!(choice == 'p' || choice == 'h' || choice =='e' || choice == '\n')){
       printf("Invalid input!\n");
-      choice = getchar();
+      choice = tolower(getchar());
     }
 
     switch(choice)
