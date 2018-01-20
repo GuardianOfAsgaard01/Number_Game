@@ -46,7 +46,7 @@ static void magic_num(int n)
     printf("\n\nI win :]\n\n");
     exit(0);
   }
-  /* no matter what user input we keep magic numbers[4k+1] within the rules */
+  /* no matter what user input we keep say next magic numbers[4k+1] within the rules */
   printf("-I say %d.\n", (k-1)*4+1);
   magic_num((k-1)*4+1);
 }
@@ -71,10 +71,10 @@ void play(void)
     break;
     n = get_num(n);
   }
-  /* being first for having magic number */
+  /* being first for say magic number */
   if ((n-1)%4!=0)
     first_move(n);
-  /* being second for don't lose the magic number */
+  /* being second for say the magic number */
   else {
     printf("-You start..\n");
     magic_num(n);
