@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
+#include <stdlib.h> /* for atoi and exit(0) */
+#include <ctype.h> /* for isspace */
 #include "functions.h"
 
 #define MAXINPUT 5
@@ -15,7 +15,7 @@ static int get_num()
         if(c == '\n')
             break;
         /* ignore the white space */
-        else if(c == ' ')
+        else if(isspace(c))
             continue;
         /* check if user enter non-integer value */
         else if(c < '0' || c > '9'){
