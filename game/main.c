@@ -1,7 +1,7 @@
 /* Compile with: gcc -o NumberGame main.c functions.c */
 #include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
+#include <stdlib.h> /* for exit(0) */
+#include <ctype.h> /* for tolower */
 #include "functions.h"
 
 int main(void)
