@@ -3,8 +3,6 @@
 #include <ctype.h> /* for isspace */
 #include "functions.h"
 
-#define MAXINPUT 5
-
 /* get_num: gets input and checks it */
 static int get_num()
 {
