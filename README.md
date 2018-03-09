@@ -11,4 +11,4 @@
 --> Note: Entering negative number is forbidden!
 
 
-<img src="/preview.png" width="560">
+<img src="/Preview.png" width="560">
