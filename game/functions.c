@@ -1,30 +1,11 @@
 #include <stdio.h>
-#include <stdlib.h> /* for atoi and exit(0) */
-#include <ctype.h> /* for isspace */
+#include <stdlib.h>
+#include <ctype.h>
 #include "functions.h"
 
-/* get_num: gets input and checks it */
-static int get_num()
-{
-    int i=0;
-    char c, number[MAXINPUT];
-    while(i<MAXINPUT){
-        c = getchar();
-        if(c == '\n')
-            break;
-        /* ignore the white space */
-        else if(isspace(c))
-            continue;
-        /* check if user enter non-integer value */
-        else if(c < '0' || c > '9'){
-            printf("Invalid input!\nPlease just enter number\n");
-            get_num();
-        }
-        else
-            number[i++] = c;
-    }
-    return atoi(number);
-}
+#define MAXINPUT 5
+
+char number[MAXINPUT]; /* buffer for number inputs */
 
 /* suggestions: print the valid inputs */
 static void suggestions(int n)
@@ -46,7 +27,9 @@ static void magic_num(int n)
   int k = (n-1)/4;
   while(1){
     suggestions(n);
-    user_input = get_num();
+    scanf("%5[0123456789]", number); /* only number input permitted */
+    while(getchar() !='\n'); /* flushing the input stream */
+    user_input = atoi(number);
     /* Checking the input */
     if(!(user_input==(n-1) || user_input==(n-2) || user_input==(n-3)) || user_input<0){
       printf("Invalid input!\n");
@@ -79,11 +62,15 @@ void play(void)
   /* ignoring the '/n' after 'p' typed */
   getchar();
   printf("#Enter the initial number:\n");
-  n = get_num();
+  scanf("%5[0123456789]", number); /* only number input permitted */
+  while(getchar() !='\n'); /* flushing the input stream */
+  n = atoi(number);
   while(n < 0){
     printf("You cannot enter negative number!\n");
     break;
-    n = get_num();
+    scanf("%5[0123456789]", number); /* only number input permitted */
+    while(getchar() !='\n'); /* flushing the input stream */
+    n = atoi(number);
   }
   /* being first for say magic number */
   if ((n-1)%4!=0)
@@ -100,6 +87,7 @@ void help(void)
 {
   printf("-> After entered initial number,\n");
   printf("-> sides decrase the number with 1, 2 or 3 respectively.\n");
-  printf("-> The person who says ZERO wins the game.\n");
+  printf("-> The person who says ZERO lose the game.\n");
   printf(" Note: Entering negative number is forbidden!\n");
+  printf("\nEnter 'p' to start.\n");
 }
