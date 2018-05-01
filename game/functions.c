@@ -85,8 +85,8 @@ void play(void)
 /* help: print the user manual */
 void help(void)
 {
-  printf("-> After entered initial number,\n");
-  printf("-> sides decrase the number with 1, 2 or 3 respectively.\n");
+  printf("-> After entering the initial number,\n");
+  printf("-> sides decrease the number by 1, 2 or 3 respectively.\n");
   printf("-> The person who says ZERO lose the game.\n");
   printf(" Note: Entering negative number is forbidden!\n");
   printf("\nEnter 'p' to start.\n");
